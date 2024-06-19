@@ -8,15 +8,15 @@ zustand(z2).
 
 %Alphabet
 %sigma(X): X ist Teil des Alphabets.
-sigma(t0).
-sigma(t1).
+sigma(0).
+sigma(1).
 
 %Transitionsfunktionen
 %delta(AktZ,A,NeuZ): Transition von AktZ zu NeuZ über das Zeichen A.
-delta(z0,t0,z1).
-delta(z0,t0,z0).
-delta(z0,t1,z0).
-delta(z1,t1,z2).
+delta(z0,0,z1).
+delta(z0,0,z0).
+delta(z0,1,z0).
+delta(z1,1,z2).
 
 %Startzustandsmenge Z0
 %start(Z): Z ist Teil der Startzustandsmenge.
