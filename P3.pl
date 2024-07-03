@@ -6,8 +6,8 @@ app([X|Xs], Ys, [X|Rs]):- app(Xs,Ys,Rs).
 präfix(Xs,Ys) :- app(Xs,_,Ys).
 
 %postfix(Xs,Ys): Ys endet mit Xs.
-postfix(Xs,Ys) :- reverse(Ys,YRs), reverse(Xs,XRs), präfix(XRs,YRs).
-postfix(Xs,Ys) :- append(_,Xs,Ys).
+%postfix(Xs,Ys) :- reverse(Ys,YRs), reverse(Xs,XRs), präfix(XRs,YRs).
+postfix(Xs,Ys) :- app(_,Xs,Ys).
 
 %binbaum(X): Prüft ob X ein gültiger Binärbaum ist
 binbaum(e).

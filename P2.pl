@@ -14,11 +14,11 @@ mem(X,list(_,Xs)) :- mem(X,Xs), linListe(Xs).
 infix(Xs,Ys) :- append(_,Xs,R1), append(R1,_,Ys), linListe(Xs), linListe(Ys).
 
 %attach(Xs,X,Ys): Ys ist Xs um X verlängert.
-attach(Xs,X,list(X,Xs)) :- linListe(Xs).
+attach(Xs,X,Ys) :- append(Xs,list(X,nil),Ys), linListe(Ys).
 
 %rev(Xs,Ys): Ys ist Xs rückwärts.
 rev(nil,nil).
-rev(list(X,Xs),Ys) :- rev(Xs,Hs), append(Hs,list(X,nil),Ys).
+rev(list(X,Xs),Ys) :- rev(Xs,Hs), attach(Hs,X,Ys).
 
 %binbaum(X): Prüft ob X ein gültiger Binärbaum ist
 binbaum(e).
